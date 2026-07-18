@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник — дизайн форума</title>
+    <style>
+        :root {
+            --bg: #1a1d23;
+            --card: #21252b;
+            --text: #c8ccd4;
+            --accent: #7c8ba0;
+            --accent2: #5a7d9a;
+            --border: #2c313a;
+            --radius: 8px;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.9em;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            margin-bottom: 8px;
+            color: #e1e5eb;
+        }
+        .subtitle {
+            color: var(--accent);
+            font-size: 0.95em;
+            margin-bottom: 40px;
+            border-left: 3px solid var(--accent2);
+            padding-left: 16px;
+        }
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 30px;
+            margin-bottom: 24px;
+        }
+        .section h2 {
+            font-size: 1.15em;
+            font-weight: 500;
+            color: #d0d6df;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section h2 span {
+            color: var(--accent2);
+            font-weight: 400;
+            font-size: 0.85em;
+        }
+        .field {
+            margin-bottom: 22px;
+        }
+        .field:last-child {
+            margin-bottom: 0;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.92em;
+            margin-bottom: 6px;
+            color: #cdd3dc;
+        }
+        label .hint {
+            font-weight: 400;
+            font-size: 0.85em;
+            color: var(--accent);
+            display: block;
+            margin-top: 2px;
+        }
+        textarea,
+        input[type="text"] {
+            width: 100%;
+            background: #181a1f;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 14px 16px;
+            color: #dce0e8;
+            font-family: inherit;
+            font-size: 0.93em;
+            line-height: 1.6;
+            resize: vertical;
+            transition: border 0.2s;
+        }
+        textarea:focus,
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent2);
+        }
+        textarea {
+            min-height: 90px;
+        }
+        .note {
+            background: #1b1e24;
+            border-left: 3px solid var(--accent2);
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.88em;
+            color: var(--accent);
+            margin-top: 16px;
+        }
+        .footer-note {
+            text-align: center;
+            color: #5a6270;
+            font-size: 0.82em;
+            margin-top: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Опросник для deadline</h1>
+        <p class="subtitle">Ничего сложного, если что-то непонятно, помогу)</p>
+
+        <!-- Часть 1 -->
+        <div class="section">
+            <h2>1. Настроение и атмосфера <span>— фундамент</span></h2>
+
+            <div class="field">
+                <label>Ключевые слова-ощущения (3–5 слов)
+                    <span class="hint">Каким должен чувствоваться форум? Например: холодный, величественный, мистический, глянцевый</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Анти-ощущения (3–5 слов)
+                    <span class="hint">Чего точно быть не должно? Например: тёплый, наивный, мультяшный, плоский</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Цветовая палитра
+                    <span class="hint">Какие цвета исключить полностью? Как смотрите на акцентный цвет (золото, серебро, бирюзовое свечение)?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Формы и линии
+                    <span class="hint">Плавные и текучие, как дым или изгиб хвоста? Текстуры (чешуя, акварель, камень)? Асимметрия?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+        </div>
+
+        <!-- Часть 2 -->
+        <div class="section">
+            <h2>2. Сюжет и концепция <span>— драконы</span></h2>
+
+            <div class="field">
+                <label>Глубина погружения
+                    <span class="hint">Что главное: драконы и всадники? Академия Басгиат? Магия теней? Драконьи хроники?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Ключевые символы
+                    <span class="hint">Какие образы можно использовать: печати, цитаты, кинжалы, силуэты драконов?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Как драконы живут в дизайне?
+                    <span class="hint">Прямо: силуэты, глаза, крылья. Скрыто: текстура чешуи на кнопках, свечение при наведении. Или сюжетно: светлая тема — мир людей, тёмная — мир драконов?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+        </div>
+
+        <!-- Часть 3 -->
+        <div class="section">
+            <h2>3. Архитектура <span>— все страницы и элементы</span></h2>
+
+            <div class="field">
+                <label>Список HTML-тем и страниц
+                    <span class="hint">Отметьте всё, что нужно. Можно дописать своё.</span>
+                </label>
+                <textarea placeholder="Например:
+- Общий дизайн (светлая + тёмная версия)
+- Гостевая
+- Личная страница (единое полотно)
+- Правила
+- Список ролей / твинов
+- Банк / магазин
+- Шаблон принятия
+- Баннеры и реклама
+- Технические аватары
+- Фоны для профиля и сообщений
+- ..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Уникальные фичи
+                    <span class="hint">Что уже обсудили: скрытые активисты в шапке, название не слишком большое, две полностью независимые темы, картинки на кнопки «новое/старое», мобильная версия без иконок в меню. Что добавить?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="field">
+                <label>Скрипты
+                    <span class="hint">Какие скрипты нужно перенести или настроить под новый дизайн?</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+        </div>
+
+        <!-- Часть 4 -->
+        <div class="section">
+            <h2>4. Технические штрихи и вдохновение</h2>
+
+            <div class="field">
+                <label>Референсы и визуальные якоря
+                    <span class="hint">Ссылки на доски, отдельные изображения — всё что цепляет по типографике, композиции, UI-решениям. В общем, все, что нравится)</span>
+                </label>
+                <textarea placeholder="Впишите сюда..."></textarea>
+            </div>
+
+            <div class="note">
+                После заполнения я соберу из ответов финальное ТЗ и параллельно начну готовить мудборды и цветовые сочетания.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
